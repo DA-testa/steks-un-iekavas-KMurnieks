@@ -1,5 +1,5 @@
-# python3
-# Kristaps Mūrnieks, 221RDB173
+# python3 # Kristaps Mūrnieks, 221RDB173
+
 
 from collections import namedtuple
 
@@ -10,9 +10,6 @@ def are_matching(left, right):
     return (left + right) in ["()", "[]", "{}"]
 
 
-
-
-
 def find_mismatch(text):
     opening_brackets_stack = []
     for i, next in enumerate(text):
@@ -20,10 +17,7 @@ def find_mismatch(text):
             # Process opening bracket, write your code here
             opening_brackets_stack.append(Bracket(next,i))
             pass
-
-        
-        
-        
+    
         if next in ")]}":
             # Process closing bracket, write your code here
             if not opening_brackets_stack or not are_matching(opening_brackets_stack[-1].char,next):
@@ -31,12 +25,10 @@ def find_mismatch(text):
             opening_brackets_stack.pop()
             pass
           
-    if not opening_brackets_stack:
-         print("Success")
+    if not opening_brackets_stack: 
+        print("Success")
     else:
       opening_brackets_stack[0].position+1
-
-
 
 
 def main():
@@ -45,6 +37,5 @@ def main():
         text=input() 
         mismatch = find_mismatch(text)
         print(mismatch)
-      
 if __name__ == "__main__":
     main()
