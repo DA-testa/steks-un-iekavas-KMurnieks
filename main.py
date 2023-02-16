@@ -33,7 +33,8 @@ def find_mismatch(text):
           
     if not opening_brackets_stack:
          print("Success")
-    return opening_brackets_stack[0].position+1
+    else:
+      opening_brackets_stack[0].position+1
 
 
 
@@ -47,4 +48,3 @@ def main():
       
 if __name__ == "__main__":
     main()
-
